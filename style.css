@@ -1,0 +1,53 @@
+body {
+    background-color: rgba(0, 0, 0, 0.144);
+}
+
+.container {
+    margin-top: 80px;
+}
+
+.containerValores {
+    margin-top: 10px;
+}
+
+#myButton {
+    background-color: rgb(127, 67, 161);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}
+
+#myButton.pulse {
+    animation: pulse 1s infinite;
+}
+
+@keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+.containerMelhorias {
+  border: 1px solid black;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+#tituloMelhoriasUnicas {
+  margin-bottom: 20px;
+  border-bottom: 1px solid black;
+  padding-bottom: 5px;
+}
+
+.offcanvas-body > p {
+  border-bottom: 1px solid black;
+  padding-bottom: 3px;
+}
