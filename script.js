@@ -324,3 +324,18 @@ function validarConquistasClisk() {
     }
     
 }
+
+
+function adjustFooterPosition() {
+    const body = document.querySelector('body');
+    const footer = document.querySelector('footer');
+    const bodyHeight = body.offsetHeight;
+    const windowHeight = window.innerHeight;
+    if (bodyHeight < windowHeight) {
+       footer.style.position = 'fixed';
+       footer.style.bottom = '0';
+    } else {
+       footer.style.position = 'static';
+    }
+ }
+ window.addEventListener('resize', adjustFooterPosition);

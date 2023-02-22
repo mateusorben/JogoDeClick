@@ -11,6 +11,19 @@
     <script src="script.js" defer></script>
 </head>
 <body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Clique</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <button class="btn btn-primary btn-conquistas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Conquistas</button>
+        </div>
+      </div>
+    </div>
+  </nav>
     <div class="container text-center">
         <div class="row">
           <div class="col">
@@ -72,8 +85,6 @@
       </div>
   </div>
 
-  <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Conquistas</button>
-
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
       <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Suas Conquistas:</h4>
@@ -81,19 +92,19 @@
     </div>
     <div class="offcanvas-body">
       <h5>Clicador Aprendiz</h5>
-      <p>Clique 10 vezes | <strong>10</strong>/<span id="conquista10">0</span></p>
+      <p>Clique 10 vezes | <span id="conquista10">0</span>/<strong>10</strong></p>
       <h5>Clicador Junior</h5>
-      <p>Clique 1000 vezes | <strong>1000</strong>/<span id="conquistaMil">0</span></p>
+      <p>Clique 1000 vezes | <span id="conquistaMil">0</span>/<strong>1000</strong></p>
       <h5>Clicador Pleno</h5>
-      <p>Clique 5000 vezes | <strong>5000</strong>/<span id="conquista5Mil">0</span></p>
+      <p>Clique 5000 vezes | <span id="conquista5Mil">0</span>/<strong>5000</strong></p>
       <h5>Clicador Senior</h5>
-      <p>Clique 10000 vezes | <strong>10000</strong>/<span id="conquista10Mil">0</span></p>
+      <p>Clique 10000 vezes | <span id="conquista10Mil">0</span>/<strong>10000</strong></p>
       <h5>Mega Clicador</h5>
-      <p>Clique 50000 vezes | <strong>50000</strong>/<span id="conquista50Mil">0</span></p>
+      <p>Clique 50000 vezes | <span id="conquista50Mil">0</span>/<strong>50000</strong></p>
       <h5>Ultra Master Clicador</h5>
-      <p>Clique 100000 vezes | <strong>100000</strong>/<span id="conquista100Mil">0</span></p>
+      <p>Clique 100000 vezes | <span id="conquista100Mil">0</span>/<strong>100000</strong></p>
       <h5>Você Realmete é um Clicador</h5>
-      <p>Clique 500000 vezes | <strong>500000</strong>/<span id="conquista500Mil">0</span></p>
+      <p>Clique 500000 vezes | <span id="conquista500Mil">0</span>/<strong>500000</strong></p>
     </div>
   </div>
 
@@ -108,4 +119,9 @@
     </div>
   </div>
 </body>
+<footer>
+  <p>Desenvolvido por Mateus Orben</p>
+  <p>Versão 1.0</p>
+  <p>Ainda em fase de testes! Bugs e erros podem acontecer</p>
+</footer>
 </html>

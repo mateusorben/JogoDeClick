@@ -1,39 +1,45 @@
 body {
-    background-color: rgba(0, 0, 0, 0.144);
+  background-color: rgba(0, 0, 0, 0.144);
+  padding: 0px;
+  margin: 0px;
 }
 
+/* NAVBAR */
+
+/* FIM NAVBAR */
+
 .container {
-    margin-top: 80px;
+  margin-top: 80px;
 }
 
 .containerValores {
-    margin-top: 10px;
+  margin-top: 10px;
 }
 
 #myButton {
-    background-color: rgb(127, 67, 161);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 50%;
-    height: 100px;
-    width: 100px;
+  background-color: rgb(127, 67, 161);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 50%;
+  height: 150px;
+  width: 150px;
 }
 
 #myButton.pulse {
-    animation: pulse 1s infinite;
+  animation: pulse 1s infinite;
 }
 
 @keyframes pulse {
-    0% {
-      transform: scale(1);
-    }
-    50% {
-      transform: scale(1.1);
-    }
-    100% {
-      transform: scale(1);
-    }
+  0% {
+    transform: scale(1);
   }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
 
 .containerMelhorias {
   border: 1px solid black;
@@ -50,4 +56,22 @@ body {
 .offcanvas-body > p {
   border-bottom: 1px solid black;
   padding-bottom: 3px;
+}
+
+/* FOOTER */
+
+footer {
+  padding: 5px 0px 5px 0px;
+  margin-top: 100px;
+  width: 100%;
+  text-align: center;
+  background-color: rgb(171, 209, 241);
+}
+
+/* FIM FOOTER*/
+
+@media only screen and (max-width: 991px){
+  .btn-conquistas {
+    margin-top: 20px;
+  }
 }
