@@ -45,9 +45,9 @@ let contadorCountComprado1Click = 0;
 let mais1ClickApos50Desconto = false;
 
 function mais1Click() {
-    let valorAdicionado1Clisk = 1;
+    let valorAdicionado1Clicks = 1;
     if(dobrouQtdClicksMelhoriaClicks){
-        valorAdicionado1Clisk = 2;
+        valorAdicionado1Clicks = 2;
     } 
     if(comprou50DescontoBool1Click) {
         valorControlador1Click50Desconto = Math.floor(valorControlador1Click / 2);
@@ -59,7 +59,7 @@ function mais1Click() {
             valorControlador1Click50Desconto = arredondandoValor;
             comprou50DescontoBool1Click = false;
             mais1ClickApos50Desconto = true;
-            addCountScore += valorAdicionado1Clisk; 
+            addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
@@ -75,7 +75,7 @@ function mais1Click() {
             let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;          
-            addCountScore += valorAdicionado1Clisk; 
+            addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
@@ -89,7 +89,7 @@ function mais1Click() {
             let arredondandoValor = Math.floor(valorControlador1Click * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click = arredondandoValor;
-            addCountScore += valorAdicionado1Clisk; 
+            addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
@@ -108,9 +108,9 @@ let mais3ClicksApos50Desconto = false;
 let valorControlador3Clicks = 50;
 
 function mais3Clicks() {
-    let valorAdicionadoClisk = 3;
+    let valorAdicionadoClicks = 3;
     if (dobrouQtdClicksMelhoriaClicks){
-        valorAdicionadoClisk = 6;
+        valorAdicionadoClicks = 6;
     }
     if(comprou50DescontoBool3Clicks) {
         valorControlador3Clicks50Desconto = Math.floor(valorControlador3Clicks /2);
@@ -123,7 +123,7 @@ function mais3Clicks() {
             valorControlador3Clicks50Desconto = arredondandoValor;          
             comprou50DescontoBool3Clicks = false;
             mais3ClicksApos50Desconto = true;
-            addCountScore += valorAdicionadoClisk; 
+            addCountScore += valorAdicionadoClicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
             countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;
@@ -137,7 +137,7 @@ function mais3Clicks() {
             let arredondandoValor = Math.floor(valorControlador3Clicks50Desconto * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks50Desconto = arredondandoValor;
-            addCountScore += valorAdicionadoClisk;
+            addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
             countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;
@@ -151,7 +151,7 @@ function mais3Clicks() {
             let arredondandoValor = Math.floor(valorControlador3Clicks * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks = arredondandoValor;
-            addCountScore += valorAdicionadoClisk;
+            addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
             countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;    
@@ -166,6 +166,11 @@ let valorControladorAutoClick = 100;
 let contadorCountCompradoAutoClick = 0;
 
 function mais1ClickAuto() {
+    let valorAdicionadoClicks = 1;
+    if (dobrouQtdClicksMelhoriaClicks){
+        valorAdicionadoClicks = 2;
+    }
+
     if(scoreCount >= valorControladorAutoClick) {
         scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick;
         scoreCount -= valorControladorAutoClick;
@@ -175,7 +180,7 @@ function mais1ClickAuto() {
         contadorCountCompradoAutoClick++;
         countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
         setInterval(function() {
-            scoreCounPrincipal.innerHTML = scoreCount++;  
+            scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
         }, 1000); 
     } else {
         alert("Ainda não há cliques suficientes!")
