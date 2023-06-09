@@ -49,15 +49,15 @@ function mais1Click() {
     if(dobrouQtdClicksMelhoriaClicks){
         valorAdicionado1Clisk = 2;
     } 
-    if(comprou50DescontoBool) {
-        valorControlador1Click50Desconto = valorControlador1Click / 2;
+    if(comprou50DescontoBool1Click) {
+        valorControlador1Click50Desconto = Math.floor(valorControlador1Click / 2);
         if(scoreCount >= valorControlador1Click50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
             scoreCount -= valorControlador1Click50Desconto;
-            let arredondandoValor = Math.round(valorControlador1Click50Desconto * 1.2);
+            let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool1Click = false;
             mais1ClickApos50Desconto = true;
             addCountScore += valorAdicionado1Clisk; 
             CountPorClick.innerHTML = addCountScore;
@@ -72,7 +72,7 @@ function mais1Click() {
             console.log("entrei no apos50")
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
             scoreCount -= valorControlador1Click50Desconto;
-            let arredondandoValor = Math.round(valorControlador1Click50Desconto * 1.2);
+            let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;          
             addCountScore += valorAdicionado1Clisk; 
@@ -86,7 +86,7 @@ function mais1Click() {
         if(scoreCount >= valorControlador1Click) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click;
             scoreCount -= valorControlador1Click;
-            let arredondandoValor = Math.round(valorControlador1Click * 1.2);
+            let arredondandoValor = Math.floor(valorControlador1Click * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click = arredondandoValor;
             addCountScore += valorAdicionado1Clisk; 
@@ -112,15 +112,16 @@ function mais3Clicks() {
     if (dobrouQtdClicksMelhoriaClicks){
         valorAdicionadoClisk = 6;
     }
-    if(comprou50DescontoBool) {
-        valorControlador3Clicks50Desconto = valorControlador3Clicks /2;
+    if(comprou50DescontoBool3Clicks) {
+        valorControlador3Clicks50Desconto = Math.floor(valorControlador3Clicks /2);
+        console.log("Valor que arredondou = " + valorControlador3Clicks50Desconto)
         if(scoreCount >= valorControlador3Clicks50Desconto){
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks50Desconto;
             scoreCount -= valorControlador3Clicks50Desconto;
-            let arredondandoValor = Math.round(valorControlador3Clicks50Desconto * 1.2);
+            let arredondandoValor = Math.floor(valorControlador3Clicks50Desconto * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks50Desconto = arredondandoValor;          
-            comprou50DescontoBool = false;
+            comprou50DescontoBool3Clicks = false;
             mais3ClicksApos50Desconto = true;
             addCountScore += valorAdicionadoClisk; 
             CountPorClick.innerHTML = addCountScore;
@@ -133,7 +134,7 @@ function mais3Clicks() {
         if (scoreCount >= valorControlador3Clicks50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks50Desconto;
             scoreCount -= valorControlador3Clicks50Desconto;
-            let arredondandoValor = Math.round(valorControlador3Clicks50Desconto * 1.2);
+            let arredondandoValor = Math.floor(valorControlador3Clicks50Desconto * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks50Desconto = arredondandoValor;
             addCountScore += valorAdicionadoClisk;
@@ -147,7 +148,7 @@ function mais3Clicks() {
         if(scoreCount >= valorControlador3Clicks) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks;
             scoreCount -= valorControlador3Clicks;
-            let arredondandoValor = Math.round(valorControlador3Clicks * 1.2);
+            let arredondandoValor = Math.floor(valorControlador3Clicks * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks = arredondandoValor;
             addCountScore += valorAdicionadoClisk;
@@ -168,7 +169,7 @@ function mais1ClickAuto() {
     if(scoreCount >= valorControladorAutoClick) {
         scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick;
         scoreCount -= valorControladorAutoClick;
-        let arredondandoValor = Math.round(valorControladorAutoClick * 1.2);
+        let arredondandoValor = Math.floor(valorControladorAutoClick * 1.2);
         valorAutoClick.innerHTML = arredondandoValor;
         valorControladorAutoClick = arredondandoValor;
         contadorCountCompradoAutoClick++;
@@ -182,18 +183,18 @@ function mais1ClickAuto() {
 }
 
 const comprou50Desconto = document.getElementById("cromprou50Desconto");
-let comprou50DescontoBool = false;
+let comprou50DescontoBool1Click = false;
+let comprou50DescontoBool3Clicks = false;
 let comprou50DescontoBlock = false;
 
 function desconto50() {
-    if(comprou50DescontoBool != true) {
+    if(comprou50DescontoBool1Click != true && comprou50DescontoBool3Clicks != true) {
         if(scoreCount >= 10) {
             comprou50Desconto.innerText = "Comprado!"
-            comprou50DescontoBool = true;
-            let arredondandoValor1 = Math.floor(valorControlador1Click * 1.2);
-            let arredondandoValor3 = Math.floor(valorControlador3Clicks * 1.2);
-            valor1Click.innerHTML = valorControlador1Click/2;
-            valor3Clicks.innerHTML = valorControlador3Clicks/2;
+            comprou50DescontoBool1Click = true;
+            comprou50DescontoBool3Clicks = true;
+            valor1Click.innerHTML = Math.floor(valorControlador1Click/2);
+            valor3Clicks.innerHTML = Math.floor(valorControlador3Clicks/2);
             scoreCounPrincipal.innerHTML = scoreCount - 10;
             scoreCount -= 10;
         } else {
