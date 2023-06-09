@@ -114,7 +114,6 @@ function mais3Clicks() {
     }
     if(comprou50DescontoBool3Clicks) {
         valorControlador3Clicks50Desconto = Math.floor(valorControlador3Clicks /2);
-        console.log("Valor que arredondou = " + valorControlador3Clicks50Desconto)
         if(scoreCount >= valorControlador3Clicks50Desconto){
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks50Desconto;
             scoreCount -= valorControlador3Clicks50Desconto;
@@ -164,6 +163,8 @@ const valorAutoClick = document.getElementById("valorAutoClick");
 const countCompradoAutoClick = document.getElementById("countCompradoAutoClick");
 let valorControladorAutoClick = 100;
 let contadorCountCompradoAutoClick = 0;
+let valorControladorAutoClick50Desconto = 0;
+let autoClickApos50Desconto = false;
 
 function mais1ClickAuto() {
     let valorAdicionadoClicks = 1;
@@ -171,37 +172,75 @@ function mais1ClickAuto() {
         valorAdicionadoClicks = 2;
     }
 
-    if(scoreCount >= valorControladorAutoClick) {
-        scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick;
-        scoreCount -= valorControladorAutoClick;
-        let arredondandoValor = Math.floor(valorControladorAutoClick * 1.2);
-        valorAutoClick.innerHTML = arredondandoValor;
-        valorControladorAutoClick = arredondandoValor;
-        contadorCountCompradoAutoClick++;
-        countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
-        setInterval(function() {
-            scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
-        }, 1000); 
+    if(comprou50DescontoBool1ClickAuto) {
+        valorControladorAutoClick50Desconto = Math.floor(valorControladorAutoClick /2);
+        if(scoreCount >= valorControladorAutoClick50Desconto){
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto;
+            scoreCount -= valorControladorAutoClick50Desconto;
+            let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto * 1.2);
+            valorAutoClick.innerHTML = arredondandoValor;
+            valorControladorAutoClick50Desconto = arredondandoValor;          
+            comprou50DescontoBool1ClickAuto = false;
+            autoClickApos50Desconto = true;
+            contadorCountCompradoAutoClick++;
+            countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000);
+        }  else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else if (autoClickApos50Desconto) {
+        if (scoreCount >= valorControladorAutoClick50Desconto) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto;
+            scoreCount -= valorControladorAutoClick50Desconto;
+            let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto * 1.2);
+            valorAutoClick.innerHTML = arredondandoValor;
+            valorControladorAutoClick50Desconto = arredondandoValor;
+            contadorCountCompradoAutoClick++;
+            countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000);
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
     } else {
-        alert("Ainda não há cliques suficientes!")
+        if(scoreCount >= valorControladorAutoClick) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick;
+            scoreCount -= valorControladorAutoClick;
+            let arredondandoValor = Math.floor(valorControladorAutoClick * 1.2);
+            valorAutoClick.innerHTML = arredondandoValor;
+            valorControladorAutoClick = arredondandoValor;
+            contadorCountCompradoAutoClick++;
+            countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000); 
+        } else {
+            alert("Ainda não há cliques suficientes!")
+        }
     }
 }
 
 const comprou50Desconto = document.getElementById("cromprou50Desconto");
 let comprou50DescontoBool1Click = false;
 let comprou50DescontoBool3Clicks = false;
+let comprou50DescontoBool1ClickAuto = false;
 let comprou50DescontoBlock = false;
 
 function desconto50() {
-    if(comprou50DescontoBool1Click != true && comprou50DescontoBool3Clicks != true) {
-        if(scoreCount >= 10) {
+    if(!comprou50DescontoBool1Click && !comprou50DescontoBool3Clicks && !comprou50DescontoBool1ClickAuto) {
+        if(scoreCount >= 75000) {
             comprou50Desconto.innerText = "Comprado!"
             comprou50DescontoBool1Click = true;
             comprou50DescontoBool3Clicks = true;
+            comprou50DescontoBool1ClickAuto = true;
             valor1Click.innerHTML = Math.floor(valorControlador1Click/2);
             valor3Clicks.innerHTML = Math.floor(valorControlador3Clicks/2);
-            scoreCounPrincipal.innerHTML = scoreCount - 10;
-            scoreCount -= 10;
+            valorAutoClick.innerHTML = Math.floor(valorControladorAutoClick/2);
+            scoreCounPrincipal.innerHTML = scoreCount - 75000;
+            scoreCount -= 75000;
         } else {
             alert("Ainda não há cliques suficientes!")
         }
@@ -242,9 +281,9 @@ let dobrouQtdClicksMelhoriaClicksBlock = false;
 
 function dobraQtdClicksMelhoriaClicks() {
     if(dobrouQtdClicksMelhoriaClicksBlock != true){
-        if(scoreCount >= 50) {
-            scoreCounPrincipal.innerHTML = scoreCount - 50;
-            scoreCount -= 50;
+        if(scoreCount >= 500000) {
+            scoreCounPrincipal.innerHTML = scoreCount - 500000;
+            scoreCount -= 500000;
             dobrouQtdClicksMelhoriaClicks = true;
             comprouDobraQtdClicksMelhoriaClicks.innerText = "Comprado!";
             dobrouQtdClicksMelhoriaClicksBlock = true;
