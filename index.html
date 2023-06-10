@@ -22,6 +22,9 @@
           <button class="btn btn-primary btn-conquistas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Conquistas</button>
         </div>
       </div>
+      <div>
+        <p class="navbar-brand">Você é um <span id="nivel-jogador-navbar">Clicador</span></p>
+      </div>
     </div>
   </nav>
     <div class="container text-center">
@@ -67,6 +70,37 @@
           </div>
         </div>
     </div>
+
+    <div class="container text-center">
+      <div class="row align-items-center">
+        <div class="col">
+          Aumente +<span id="dobrouQtdClicksMelhoriaNumero1">?</span> cliques
+        </div>
+        <div class="col">
+          Aumente +<span id="dobrouQtdClicksMelhoriaNumero3">?</span> cliques
+        </div>
+        <div class="col">
+          +<span id="dobrouQtdClicksMelhoriaNumeroAuto">?</span> cliques auto a cada 1s
+        </div>
+      </div>
+  </div>
+  <div class="container text-center containerValores">
+      <div class="row align-items-center">
+        <div class="col">
+          <button onclick="mais1Click()" disabled> <abbr title="Desbloqueia sendo um Clicador Aprendiz">Comprar</abbr> $<span id="valor1Click">???</span></button>
+          <p>Qtd. Comprado = <span id="countComprado1Click">0</span></p>
+        </div>
+        <div class="col">
+          <button onclick="mais3Clicks()" disabled> <abbr title="Desbloqueia sendo um Clicador Junior">Comprar</abbr> $<span id="valor3Clicks">???</span></button>
+          <p>Qtd. Comprado = <span id="countComprado3Clicks">0</span></p>
+        </div>
+        <div class="col">
+          <button onclick="mais1ClickAuto()" disabled> <abbr title="Desbloqueia sendo um Clicador Pleno">Comprar</abbr> $<span id="valorAutoClick">???</span></button>
+          <p>Qtd. Comprado = <span id="countCompradoAutoClick">0</span></p>
+        </div>
+      </div>
+  </div>
+
     <div class="container text-center containerMelhorias">
       <h3 id="tituloMelhoriasUnicas">Devem Ajudar Você</h3>
       <div class="row align-items-center">

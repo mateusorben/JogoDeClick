@@ -310,6 +310,8 @@ const conquista500Mil = document.getElementById("conquista500Mil");
 const toastLiveExample = document.getElementById('liveToast')
 const toast_body = document.getElementById('toast-body');
 
+const nivel_jogador_navbar = document.getElementById('nivel-jogador-navbar');
+
 function validarConquistasClisk() {
     if(conquistaContadorClicks <= 10) {
         conquista10.innerHTML = conquistaContadorClicks;
@@ -317,6 +319,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Clicador Aprendiz | 10 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Clicador Aprendiz';
         } 
     } 
     if(conquistaContadorClicks <= 1000){
@@ -325,6 +328,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Clicador Junior | 1000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Clicador Junior';
         } 
     }
     if(conquistaContadorClicks <= 5000){
@@ -333,6 +337,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Clicador Pleno | 5000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Clicador Pleno';
         } 
     }
     if(conquistaContadorClicks <= 10000){
@@ -341,6 +346,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Clicador Senior | 10000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Clicador Senior';
         } 
     }
     if(conquistaContadorClicks <= 50000){
@@ -349,6 +355,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Mega Clicador | 50000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Mega Clicadorz';
         } 
     }
     if(conquistaContadorClicks <= 100000){
@@ -357,6 +364,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Ultra Master Clicador | 100000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Ultra Master Clicador';
         } 
     }
     if(conquistaContadorClicks <= 500000){
@@ -365,6 +373,7 @@ function validarConquistasClisk() {
             toast_body.innerText = "Você Realmente é um Clicador | 500000 Cliques";         
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
+            nivel_jogador_navbar.innerText = 'Você Realmente é um Clicador';
         } 
     }
     
