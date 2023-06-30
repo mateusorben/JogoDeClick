@@ -49,7 +49,7 @@ function mais1Click() {
     if(dobrouQtdClicksMelhoriaClicks){
         valorAdicionado1Clicks = 2;
     } 
-    if(comprou50DescontoBool1Click) {
+    if(comprou50DescontoBool) {
         valorControlador1Click50Desconto = Math.floor(valorControlador1Click / 2);
         if(scoreCount >= valorControlador1Click50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
@@ -57,7 +57,7 @@ function mais1Click() {
             let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;
-            comprou50DescontoBool1Click = false;
+            comprou50DescontoBool = false;
             mais1ClickApos50Desconto = true;
             addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
@@ -99,6 +99,67 @@ function mais1Click() {
     } 
 }
 
+const valor5Clicks = document.getElementById("valor5Clicks");
+const countComprado5Clicks = document.getElementById("countComprado5Clicks");
+let contadorCountComprado5Clicks = 0;
+let valorControlador5Clicks50Desconto = 0;
+let mais5ClicksApos50Desconto = false;
+
+let valorControlador5Clicks = 200;
+
+function mais5Clicks() {
+    let valorAdicionadoClicks = 5;
+    if (dobrouQtdClicksMelhoriaClicks){
+        valorAdicionadoClicks = 10;
+    }
+    if(comprou50DescontoBool) {
+        valorControlador5Clicks50Desconto = Math.floor(valorControlador5Clicks /2);
+        if(scoreCount >= valorControlador5Clicks50Desconto){
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador5Clicks50Desconto;
+            scoreCount -= valorControlador5Clicks50Desconto;
+            let arredondandoValor = Math.floor(valorControlador5Clicks50Desconto * 1.2);
+            valor5Clicks.innerHTML = arredondandoValor;
+            valorControlador5Clicks50Desconto = arredondandoValor;          
+            comprou50DescontoBool = false;
+            mais5ClicksApos50Desconto = true;
+            addCountScore += valorAdicionadoClicks; 
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado5Clicks++;
+            countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;
+        }  else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else if (mais5ClicksApos50Desconto) {
+        if (scoreCount >= valorControlador5Clicks50Desconto) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador5Clicks50Desconto;
+            scoreCount -= valorControlador5Clicks50Desconto;
+            let arredondandoValor = Math.floor(valorControlador5Clicks50Desconto * 1.2);
+            valor5Clicks.innerHTML = arredondandoValor;
+            valorControlador5Clicks50Desconto = arredondandoValor;
+            addCountScore += valorAdicionadoClicks;
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado5Clicks++;
+            countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else {
+        if(scoreCount >= valorControlador5Clicks) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador5Clicks;
+            scoreCount -= valorControlador5Clicks;
+            let arredondandoValor = Math.floor(valorControlador5Clicks * 1.2);
+            valor5Clicks.innerHTML = arredondandoValor;
+            valorControlador5Clicks = arredondandoValor;
+            addCountScore += valorAdicionadoClicks;
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado5Clicks++;
+            countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;    
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    }
+}
+
 const valor3Clicks = document.getElementById("valor3Clicks");
 const countComprado3Clicks = document.getElementById("countComprado3Clicks");
 let contadorCountComprado3Clicks = 0;
@@ -112,7 +173,7 @@ function mais3Clicks() {
     if (dobrouQtdClicksMelhoriaClicks){
         valorAdicionadoClicks = 6;
     }
-    if(comprou50DescontoBool3Clicks) {
+    if(comprou50DescontoBool) {
         valorControlador3Clicks50Desconto = Math.floor(valorControlador3Clicks /2);
         if(scoreCount >= valorControlador3Clicks50Desconto){
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks50Desconto;
@@ -120,7 +181,7 @@ function mais3Clicks() {
             let arredondandoValor = Math.floor(valorControlador3Clicks50Desconto * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks50Desconto = arredondandoValor;          
-            comprou50DescontoBool3Clicks = false;
+            comprou50DescontoBool = false;
             mais3ClicksApos50Desconto = true;
             addCountScore += valorAdicionadoClicks; 
             CountPorClick.innerHTML = addCountScore;
@@ -159,6 +220,68 @@ function mais3Clicks() {
         }
     }
 }
+
+const valor20Clicks = document.getElementById("valor20Clicks");
+const countComprado20Clicks = document.getElementById("countComprado20Clicks");
+let contadorCountComprado20Clicks = 0;
+let valorControlador20Clicks50Desconto = 0;
+let mais20ClicksApos50Desconto = false;
+
+let valorControlador20Clicks = 2000;
+
+function mais20Clicks() {
+    let valorAdicionadoClicks = 20;
+    if (dobrouQtdClicksMelhoriaClicks){
+        valorAdicionadoClicks = 40;
+    }
+    if(comprou50DescontoBool) {
+        valorControlador20Clicks50Desconto = Math.floor(valorControlador20Clicks /2);
+        if(scoreCount >= valorControlador20Clicks50Desconto){
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador20Clicks50Desconto;
+            scoreCount -= valorControlador20Clicks50Desconto;
+            let arredondandoValor = Math.floor(valorControlador20Clicks50Desconto * 1.2);
+            valor20Clicks.innerHTML = arredondandoValor;
+            valorControlador20Clicks50Desconto = arredondandoValor;          
+            comprou50DescontoBool = false;
+            mais20ClicksApos50Desconto = true;
+            addCountScore += valorAdicionadoClicks; 
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado20Clicks++;
+            countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;
+        }  else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else if (mais20ClicksApos50Desconto) {
+        if (scoreCount >= valorControlador20Clicks50Desconto) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador20Clicks50Desconto;
+            scoreCount -= valorControlador20Clicks50Desconto;
+            let arredondandoValor = Math.floor(valorControlador20Clicks50Desconto * 1.2);
+            valor20Clicks.innerHTML = arredondandoValor;
+            valorControlador20Clicks50Desconto = arredondandoValor;
+            addCountScore += valorAdicionadoClicks;
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado20Clicks++;
+            countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else {
+        if(scoreCount >= valorControlador20Clicks) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControlador20Clicks;
+            scoreCount -= valorControlador20Clicks;
+            let arredondandoValor = Math.floor(valorControlador20Clicks * 1.2);
+            valor20Clicks.innerHTML = arredondandoValor;
+            valorControlador20Clicks = arredondandoValor;
+            addCountScore += valorAdicionadoClicks;
+            CountPorClick.innerHTML = addCountScore;
+            contadorCountComprado20Clicks++;
+            countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;    
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    }
+}
+
 const valorAutoClick = document.getElementById("valorAutoClick");
 const countCompradoAutoClick = document.getElementById("countCompradoAutoClick");
 let valorControladorAutoClick = 100;
@@ -172,7 +295,7 @@ function mais1ClickAuto() {
         valorAdicionadoClicks = 2;
     }
 
-    if(comprou50DescontoBool1ClickAuto) {
+    if(comprou50DescontoBool) {
         valorControladorAutoClick50Desconto = Math.floor(valorControladorAutoClick /2);
         if(scoreCount >= valorControladorAutoClick50Desconto){
             scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto;
@@ -180,7 +303,7 @@ function mais1ClickAuto() {
             let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto * 1.2);
             valorAutoClick.innerHTML = arredondandoValor;
             valorControladorAutoClick50Desconto = arredondandoValor;          
-            comprou50DescontoBool1ClickAuto = false;
+            comprou50DescontoBool = false;
             autoClickApos50Desconto = true;
             contadorCountCompradoAutoClick++;
             countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
@@ -223,22 +346,99 @@ function mais1ClickAuto() {
     }
 }
 
+const valorAutoClick5 = document.getElementById("valorAutoClick5");
+const countCompradoAutoClick5 = document.getElementById("countCompradoAutoClick5");
+let valorControladorAutoClick5 = 5000;
+let contadorCountCompradoAutoClick5 = 0;
+let valorControladorAutoClick50Desconto5 = 0;
+let autoClicks5Apos50Desconto = false;
+
+function mais5ClicksAuto() {
+    let valorAdicionadoClicks = 5;
+    if (dobrouQtdClicksMelhoriaClicks){
+        valorAdicionadoClicks = 10;
+    }
+
+    if(comprou50DescontoBool) {
+        valorControladorAutoClick50Desconto5 = Math.floor(valorControladorAutoClick5 /2);
+        if(scoreCount >= valorControladorAutoClick50Desconto5){
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto5;
+            scoreCount -= valorControladorAutoClick50Desconto5;
+            let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto5 * 1.2);
+            valorAutoClick5.innerHTML = arredondandoValor;
+            valorControladorAutoClick50Desconto5 = arredondandoValor;          
+            comprou50DescontoBool = false;
+            autoClicks5Apos50Desconto = true;
+            contadorCountCompradoAutoClick5++;
+            countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000);
+        }  else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else if (autoClicks5Apos50Desconto) {
+        if (scoreCount >= valorControladorAutoClick50Desconto5) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto5;
+            scoreCount -= valorControladorAutoClick50Desconto5;
+            let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto5 * 1.2);
+            valorAutoClick5.innerHTML = arredondandoValor;
+            valorControladorAutoClick50Desconto5 = arredondandoValor;
+            contadorCountCompradoAutoClick5++;
+            countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000);
+        } else {
+            alert("Ainda não há cliques suficientes!");
+        }
+    } else {
+        if(scoreCount >= valorControladorAutoClick5) {
+            scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick5;
+            scoreCount -= valorControladorAutoClick5;
+            let arredondandoValor = Math.floor(valorControladorAutoClick5 * 1.2);
+            valorAutoClick5.innerHTML = arredondandoValor;
+            valorControladorAutoClick5 = arredondandoValor;
+            contadorCountCompradoAutoClick5++;
+            countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
+            setInterval(function() {
+                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
+            }, 1000); 
+        } else {
+            alert("Ainda não há cliques suficientes!")
+        }
+    }
+}
+
+let desbloqueou5clicks = false;
+let desbloqueou20clicks = false;
+let desbloqueou5clicksAuto = false;
+
 const comprou50Desconto = document.getElementById("cromprou50Desconto");
-let comprou50DescontoBool1Click = false;
-let comprou50DescontoBool3Clicks = false;
-let comprou50DescontoBool1ClickAuto = false;
+let comprou50DescontoBool = false;
 let comprou50DescontoBlock = false;
 
 function desconto50() {
-    if(!comprou50DescontoBool1Click && !comprou50DescontoBool3Clicks && !comprou50DescontoBool1ClickAuto) {
+    if(!comprou50DescontoBool) {
         if(scoreCount >= 75000) {
             comprou50Desconto.innerText = "Comprado!"
-            comprou50DescontoBool1Click = true;
-            comprou50DescontoBool3Clicks = true;
-            comprou50DescontoBool1ClickAuto = true;
+            comprou50DescontoBool = true;
             valor1Click.innerHTML = Math.floor(valorControlador1Click/2);
             valor3Clicks.innerHTML = Math.floor(valorControlador3Clicks/2);
             valorAutoClick.innerHTML = Math.floor(valorControladorAutoClick/2);
+            
+            if(desbloqueou5clicks) {
+                valor5Clicks.innerHTML = Math.floor(valorControlador5Clicks/2);
+            }
+
+            if(desbloqueou20clicks) {
+                valor20Clicks.innerHTML = Math.floor(valorControlador20Clicks/2);
+            }
+
+            if(desbloqueou5clicksAuto){
+                valorAutoClick5.innerHTML = Math.floor(valorControladorAutoClick5/2);
+            }
+            
             scoreCounPrincipal.innerHTML = scoreCount - 75000;
             scoreCount -= 75000;
         } else {
@@ -275,7 +475,10 @@ function dobraQtdClicks() {
 const comprouDobraQtdClicksMelhoriaClicks = document.getElementById("comprouDobraQtdClicksMelhoriaClicks");
 const dobrouQtdClicksMelhoriaNumero1 = document.getElementById("dobrouQtdClicksMelhoriaNumero1");
 const dobrouQtdClicksMelhoriaNumero3 = document.getElementById("dobrouQtdClicksMelhoriaNumero3");
+const dobrouQtdClicksMelhoriaNumero5 = document.getElementById("dobrouQtdClicksMelhoriaNumero5");
+const dobrouQtdClicksMelhoriaNumero20 = document.getElementById("dobrouQtdClicksMelhoriaNumero20");
 const dobrouQtdClicksMelhoriaNumeroAuto = document.getElementById("dobrouQtdClicksMelhoriaNumeroAuto");
+const dobrouQtdClicksMelhoriaNumeroAuto5 = document.getElementById("dobrouQtdClicksMelhoriaNumeroAuto5");
 let dobrouQtdClicksMelhoriaClicks = false;
 let dobrouQtdClicksMelhoriaClicksBlock = false;
 
@@ -290,6 +493,18 @@ function dobraQtdClicksMelhoriaClicks() {
             dobrouQtdClicksMelhoriaNumero1.innerHTML = "2";
             dobrouQtdClicksMelhoriaNumero3.innerHTML = "6";
             dobrouQtdClicksMelhoriaNumeroAuto.innerHTML = "2";
+            
+            if(desbloqueou5clicks){
+                dobrouQtdClicksMelhoriaNumero5.innerHTML = "10";
+            }
+
+            if(desbloqueou20clicks){
+                dobrouQtdClicksMelhoriaNumero20.innerHTML = "40";
+            }
+            
+            if(desbloqueou5clicksAuto){
+                dobrouQtdClicksMelhoriaNumeroAuto5.innerHTML = "10";
+            }
         } else {
             alert("Ainda não há cliques suficientes!");
         }
@@ -310,6 +525,21 @@ const conquista500Mil = document.getElementById("conquista500Mil");
 const toastLiveExample = document.getElementById('liveToast')
 const toast_body = document.getElementById('toast-body');
 
+const btnMais5Clicks = document.getElementById('btnMais5Clicks');
+const popoverRemoverAprendiz = document.getElementById('popoverRemoverAprendiz');
+const dobrouQtdClicksMelhoriaNumero5Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumero5');
+const valor5ClicksDesbloquear = document.getElementById('valor5Clicks');
+
+const btnMais20Clicks = document.getElementById('btnMais20Clicks');
+const popoverRemoverJunior = document.getElementById('popoverRemoverJunior');
+const dobrouQtdClicksMelhoriaNumero20Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumero20');
+const valor20ClicksDesbloquear = document.getElementById('valor20Clicks');
+
+const btnMais5ClicksAuto = document.getElementById('btnMais5ClicksAuto');
+const popoverRemoverPleno = document.getElementById('popoverRemoverPleno');
+const dobrouQtdClicksMelhoriaNumeroAuto5Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumeroAuto5');
+const valor5ClicksAutoDesbloquear = document.getElementById('valorAutoClick5');
+
 const nivel_jogador_navbar = document.getElementById('nivel-jogador-navbar');
 
 function validarConquistasClisk() {
@@ -320,6 +550,11 @@ function validarConquistasClisk() {
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
             nivel_jogador_navbar.innerText = 'Clicador Aprendiz';
+            btnMais5Clicks.removeAttribute('disabled');
+            popoverRemoverAprendiz.style.display = 'none';
+            dobrouQtdClicksMelhoriaNumero5Desbloquear.innerHTML = '5';
+            valor5ClicksDesbloquear.innerHTML = '200';
+            desbloqueou5clicks = true;
         } 
     } 
     if(conquistaContadorClicks <= 1000){
@@ -329,6 +564,11 @@ function validarConquistasClisk() {
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
             nivel_jogador_navbar.innerText = 'Clicador Junior';
+            btnMais20Clicks.removeAttribute('disabled');
+            popoverRemoverJunior.style.display = 'none';
+            dobrouQtdClicksMelhoriaNumero20Desbloquear.innerHTML = '20';
+            valor20ClicksDesbloquear.innerHTML = '2000';
+            desbloqueou20clicks = true;
         } 
     }
     if(conquistaContadorClicks <= 5000){
@@ -338,6 +578,11 @@ function validarConquistasClisk() {
             const toast = new bootstrap.Toast(toastLiveExample);
             toast.show();
             nivel_jogador_navbar.innerText = 'Clicador Pleno';
+            btnMais5ClicksAuto.removeAttribute('disabled');
+            popoverRemoverPleno.style.display = 'none';
+            dobrouQtdClicksMelhoriaNumeroAuto5Desbloquear.innerHTML = '5';
+            valor5ClicksAutoDesbloquear.innerHTML = '5000';
+            desbloqueou5clicksAuto = true;
         } 
     }
     if(conquistaContadorClicks <= 10000){
@@ -379,6 +624,9 @@ function validarConquistasClisk() {
     
 }
 
+
+const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
+const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
 
 function adjustFooterPosition() {
     const body = document.querySelector('body');

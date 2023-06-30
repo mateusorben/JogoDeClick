@@ -57,15 +57,15 @@
     <div class="container text-center containerValores">
         <div class="row align-items-center">
           <div class="col">
-            <button onclick="mais1Click()">Comprar $<span id="valor1Click">10</span></button>
+            <button onclick="mais1Click()" class="btn btn-light">Comprar $<span id="valor1Click">10</span></button>
             <p>Qtd. Comprado = <span id="countComprado1Click">0</span></p>
           </div>
           <div class="col">
-            <button onclick="mais3Clicks()">Comprar $<span id="valor3Clicks">50</span></button>
+            <button onclick="mais3Clicks()" class="btn btn-light">Comprar $<span id="valor3Clicks">50</span></button>
             <p>Qtd. Comprado = <span id="countComprado3Clicks">0</span></p>
           </div>
           <div class="col">
-            <button onclick="mais1ClickAuto()">Comprar $<span id="valorAutoClick">100</span></button>
+            <button onclick="mais1ClickAuto()" class="btn btn-light">Comprar $<span id="valorAutoClick">100</span></button>
             <p>Qtd. Comprado = <span id="countCompradoAutoClick">0</span></p>
           </div>
         </div>
@@ -74,29 +74,35 @@
     <div class="container text-center">
       <div class="row align-items-center">
         <div class="col">
-          Aumente +<span id="dobrouQtdClicksMelhoriaNumero1">?</span> cliques
+          Aumente +<span id="dobrouQtdClicksMelhoriaNumero5">?</span> cliques
         </div>
         <div class="col">
-          Aumente +<span id="dobrouQtdClicksMelhoriaNumero3">?</span> cliques
+          Aumente +<span id="dobrouQtdClicksMelhoriaNumero20">?</span> cliques
         </div>
         <div class="col">
-          +<span id="dobrouQtdClicksMelhoriaNumeroAuto">?</span> cliques auto a cada 1s
+          +<span id="dobrouQtdClicksMelhoriaNumeroAuto5">?</span> cliques auto a cada 1s
         </div>
       </div>
   </div>
   <div class="container text-center containerValores">
       <div class="row align-items-center">
         <div class="col">
-          <button onclick="mais1Click()" disabled> <abbr title="Desbloqueia sendo um Clicador Aprendiz">Comprar</abbr> $<span id="valor1Click">???</span></button>
-          <p>Qtd. Comprado = <span id="countComprado1Click">0</span></p>
+            <span class="d-inline-block" id="popoverRemoverAprendiz" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador aprendiz">
+              <button class="btn btn-light" type="button" onclick="mais5Clicks()" id="btnMais5Clicks" disabled>Comprar $<span id="valor5Clicks">???</span></button>
+            </span>
+          <p>Qtd. Comprado = <span id="countComprado5Clicks">0</span></p>
         </div>
         <div class="col">
-          <button onclick="mais3Clicks()" disabled> <abbr title="Desbloqueia sendo um Clicador Junior">Comprar</abbr> $<span id="valor3Clicks">???</span></button>
-          <p>Qtd. Comprado = <span id="countComprado3Clicks">0</span></p>
+          <span class="d-inline-block" id="popoverRemoverJunior" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador junior">
+            <button class="btn btn-light" type="button" onclick="mais20Clicks()" id="btnMais20Clicks" disabled>Comprar $<span id="valor20Clicks">???</span></button>
+          </span>
+          <p>Qtd. Comprado = <span id="countComprado20Clicks">0</span></p>
         </div>
         <div class="col">
-          <button onclick="mais1ClickAuto()" disabled> <abbr title="Desbloqueia sendo um Clicador Pleno">Comprar</abbr> $<span id="valorAutoClick">???</span></button>
-          <p>Qtd. Comprado = <span id="countCompradoAutoClick">0</span></p>
+          <span class="d-inline-block" id="popoverRemoverPleno" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador pleno">
+            <button class="btn btn-light" type="button" onclick="mais5ClicksAuto()" id="btnMais5ClicksAuto" disabled>Comprar $<span id="valorAutoClick5">???</span></button>
+          </span>
+          <p>Qtd. Comprado = <span id="countCompradoAutoClick5">0</span></p>
         </div>
       </div>
   </div>
@@ -106,15 +112,15 @@
       <div class="row align-items-center">
         <div class="col">
           <p>50% de desconto no valor das melhorias de clique</p>
-          <button onclick="desconto50()"><span id="cromprou50Desconto">Comprar $75000</span></button>
+          <button onclick="desconto50()" class="btn btn-light"><span id="cromprou50Desconto">Comprar $75000</span></button>
         </div>
         <div class="col">
           <p>Dobra sua quantidade de cliques por clique</p>
-          <button onclick="dobraQtdClicks()"> <span id="cromprouDobraQtdClicks">Comprar $200000</span></button>
+          <button onclick="dobraQtdClicks()" class="btn btn-light"> <span id="cromprouDobraQtdClicks">Comprar $200000</span></button>
         </div>
         <div class="col">
           <p>Dobra a quantia de cliques das melhorias de clique</p>
-          <button onclick="dobraQtdClicksMelhoriaClicks()"> <span id="comprouDobraQtdClicksMelhoriaClicks">Comprar $500000</span></button>
+          <button onclick="dobraQtdClicksMelhoriaClicks()" class="btn btn-light"> <span id="comprouDobraQtdClicksMelhoriaClicks">Comprar $500000</span></button>
         </div>
       </div>
   </div>
