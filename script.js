@@ -13,10 +13,7 @@ let scoreCount = 0;
 
 let addCountScore = 1;
 
-const btnConquistas = document.querySelector(".btn-conquistas");
-btnConquistas.addEventListener('click', function() {
-    validarConquistasClisk(conquistaContadorClicks);
-});
+let conquistaContadorClicks = 0;
 
 function buttonSomar() {
     if(dobrouQtdClicks) { 
@@ -25,10 +22,12 @@ function buttonSomar() {
         dobrouQtdClicks = false;
         scoreCounPrincipal.innerHTML = scoreCount;
         conquistaContadorClicks++;
+        validarConquistasClisk(conquistaContadorClicks)
     } else {
         scoreCount += addCountScore;
         scoreCounPrincipal.innerHTML = scoreCount;
         conquistaContadorClicks++;
+        validarConquistasClisk(conquistaContadorClicks)
     }
 };
 
