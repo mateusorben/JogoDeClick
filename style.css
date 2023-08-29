@@ -1,32 +1,76 @@
 body {
-  background-color: rgba(0, 0, 0, 0.144);
+  background-color: rgb(11, 1, 22);
   padding: 0px;
   margin: 0px;
+  position: relative;
+  color: aliceblue;
 }
 
 .btn {
-  box-shadow: 4px 4px 7px rgba(0, 0, 0, 0.500);
+  background-color: aquamarine;
+  border-color: aquamarine;
+  box-shadow: 0px 0px 10px rgba(127, 255, 212, 0.700);
 }
 
 /* NAVBAR */
 
-/* FIM NAVBAR */
-
-.container {
-  margin-top: 80px;
+nav {
+  background-color: rgb(0, 0, 0);
+  color: aliceblue;
+  width: 100%;
 }
 
-.containerValores {
+nav p{
   margin-top: 10px;
 }
 
+.navbar-brand{
+  color: aliceblue;
+}
+
+.navbar-brand:hover{
+  color: aquamarine;
+  transition: 0.5s;
+}
+
+/* FIM NAVBAR */
+
+/* offcanvas */
+
+.offcanvas {
+  background-color: black;
+  color: aliceblue;
+}
+
+.offcanvas-body > p {
+  border-bottom: 3px solid aquamarine !important;
+}
+
+/* fim offcanvas */
+
+/* SCORE */
+
+#scoreCount{
+  font-size: 18px;
+}
+
+.containerScore p{
+  margin-top: 30px;
+}
+
+/* FIM SCORE */
+
+.container {
+  margin-top: 30px;
+}
+
+.containerValores {
+  margin-top: 30px;
+}
+
 #myButton {
-  background-color: rgb(189, 0, 0);
-  color: white;
-  padding: 10px 20px;
-  border-radius: 50%;
-  height: 150px;
-  width: 150px;
+  background-color: transparent;
+  border: none;
 }
 
 #myButton.pulse {
@@ -46,7 +90,7 @@ body {
 }
 
 .containerMelhorias {
-  border: 1px solid black;
+  border: 1px solid rgb(189, 189, 189);
   padding: 15px;
   border-radius: 10px;
 }
@@ -66,10 +110,10 @@ body {
 
 footer {
   padding: 5px 0px 5px 0px;
-  margin-top: 100px;
+  margin-top: 50px;
   width: 100%;
   text-align: center;
-  background-color: rgb(171, 209, 241);
+  background-color: rgb(0, 0, 0);
 }
 
 /* FIM FOOTER*/
@@ -78,4 +122,31 @@ footer {
   .btn-conquistas {
     margin-top: 20px;
   }
+
+  .containerValores {
+    margin-top: 20px;
+    width: 400px;
+  }
+
+  .containerValores .col{
+    margin: 10px;
+    border: 1px solid rgba(0, 0, 0, 0);
+    width: 300px;
+  }
+}
+
+/* Estilizando a barra de rolagem */
+/* Navegadores baseados no WebKit (Google Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Largura da barra de rolagem */
+}
+
+::-webkit-scrollbar-track {
+  background: #000000; /* Cor do fundo da barra de rolagem */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: aquamarine; /* Cor do "polegar" da barra de rolagem */
+  border-radius: 10px;
 }

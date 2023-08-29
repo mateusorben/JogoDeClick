@@ -9,9 +9,12 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+    <script src="validarConquistas.js" defer></script>
+    <script src="validarValoresBotoes.js" defer></script>
+
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg">
     <div class="container-fluid">
       <a class="navbar-brand" href="#">Clique</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,7 +22,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <button class="btn btn-primary btn-conquistas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Conquistas</button>
+          <button class="btn btn-conquistas" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Conquistas</button>
         </div>
       </div>
       <div>
@@ -27,100 +30,75 @@
       </div>
     </div>
   </nav>
-    <div class="container text-center">
+    <div class="container text-center containerScore">
         <div class="row">
           <div class="col">
-            <h2>Score:</h2>
+            <h2>CLIQUES:</h2>
             <span id="scoreCount">0</span>
-            <h4>Cada Click:</h4>
-            <span id="cadaClick">1</span>
+            <p>SEU CLICK VALE: <span id="cadaClick">1</span></p>
           </div>
           <div class="col">
-            <button class="botao-click" id="myButton" onclick="buttonSomar()">CLIQUE</button>
+            <button class="botao-click" id="myButton" onclick="buttonSomar()">
+            <img src="images/esoterico.png" alt="imagem para clicar"></button>
           </div>
         </div>
     </div>
 
-    <div class="container text-center">
-        <div class="row align-items-center">
-          <div class="col">
-            Aumente +<span id="dobrouQtdClicksMelhoriaNumero1">1</span> clique
-          </div>
-          <div class="col">
-            Aumente +<span id="dobrouQtdClicksMelhoriaNumero3">3</span> cliques
-          </div>
-          <div class="col">
-            +<span id="dobrouQtdClicksMelhoriaNumeroAuto">1</span> clique auto a cada 1s
-          </div>
-        </div>
-    </div>
     <div class="container text-center containerValores">
         <div class="row align-items-center">
           <div class="col">
-            <button onclick="mais1Click()" class="btn btn-light">Comprar $<span id="valor1Click">10</span></button>
+            <p>Aumente +<span id="dobrouQtdClicksMelhoriaNumero1">1</span> clique</p>
+            <button onclick="mais1Click()" class="btn" id="btn1Click">Comprar $<span id="valor1Click">10</span></button>
             <p>Qtd. Comprado = <span id="countComprado1Click">0</span></p>
           </div>
           <div class="col">
-            <button onclick="mais3Clicks()" class="btn btn-light">Comprar $<span id="valor3Clicks">50</span></button>
+            <p>Aumente +<span id="dobrouQtdClicksMelhoriaNumero3">3</span> cliques</p>
+            <button onclick="mais3Clicks()" class="btn" id="btn3Clicks">Comprar $<span id="valor3Clicks">50</span></button>
             <p>Qtd. Comprado = <span id="countComprado3Clicks">0</span></p>
           </div>
           <div class="col">
-            <button onclick="mais1ClickAuto()" class="btn btn-light">Comprar $<span id="valorAutoClick">100</span></button>
+            <p>+<span id="dobrouQtdClicksMelhoriaNumeroAuto">3</span> clique auto a cada 1s</p>
+            <button onclick="mais3ClickAuto()" class="btn" id="btn3ClickAuto">Comprar $<span id="valorAutoClick">100</span></button>
             <p>Qtd. Comprado = <span id="countCompradoAutoClick">0</span></p>
+          </div>
+          <div class="col">
+            <p>Aumente +<span id="dobrouQtdClicksMelhoriaNumero5">?</span> cliques</p>
+            <span class="d-inline-block" id="popoverRemoverAprendiz" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador aprendiz">
+              <button class="btn" type="button" onclick="mais5Clicks()" id="btnMais5Clicks" disabled>Comprar $<span id="valor5Clicks">???</span></button>
+            </span>
+            <p>Qtd. Comprado = <span id="countComprado5Clicks">0</span></p>
+          </div>
+          <div class="col">
+            <p>Aumente +<span id="dobrouQtdClicksMelhoriaNumero20">?</span> cliques</p>
+            <span class="d-inline-block" id="popoverRemoverJunior" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador junior">
+              <button class="btn" type="button" onclick="mais20Clicks()" id="btnMais20Clicks" disabled>Comprar $<span id="valor20Clicks">???</span></button>
+            </span>
+            <p>Qtd. Comprado = <span id="countComprado20Clicks">0</span></p>
+          </div>
+          <div class="col">
+            <p>+<span id="dobrouQtdClicksMelhoriaNumeroAuto5">?</span> cliques auto a cada 1s</p>
+            <span class="d-inline-block" id="popoverRemoverPleno" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador pleno">
+              <button class="btn" type="button" onclick="mais5ClicksAuto()" id="btnMais5ClicksAuto" disabled>Comprar $<span id="valorAutoClick5">???</span></button>
+            </span>
+            <p>Qtd. Comprado = <span id="countCompradoAutoClick5">0</span></p>
           </div>
         </div>
     </div>
-
-    <div class="container text-center">
-      <div class="row align-items-center">
-        <div class="col">
-          Aumente +<span id="dobrouQtdClicksMelhoriaNumero5">?</span> cliques
-        </div>
-        <div class="col">
-          Aumente +<span id="dobrouQtdClicksMelhoriaNumero20">?</span> cliques
-        </div>
-        <div class="col">
-          +<span id="dobrouQtdClicksMelhoriaNumeroAuto5">?</span> cliques auto a cada 1s
-        </div>
-      </div>
-  </div>
-  <div class="container text-center containerValores">
-      <div class="row align-items-center">
-        <div class="col">
-            <span class="d-inline-block" id="popoverRemoverAprendiz" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador aprendiz">
-              <button class="btn btn-light" type="button" onclick="mais5Clicks()" id="btnMais5Clicks" disabled>Comprar $<span id="valor5Clicks">???</span></button>
-            </span>
-          <p>Qtd. Comprado = <span id="countComprado5Clicks">0</span></p>
-        </div>
-        <div class="col">
-          <span class="d-inline-block" id="popoverRemoverJunior" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador junior">
-            <button class="btn btn-light" type="button" onclick="mais20Clicks()" id="btnMais20Clicks" disabled>Comprar $<span id="valor20Clicks">???</span></button>
-          </span>
-          <p>Qtd. Comprado = <span id="countComprado20Clicks">0</span></p>
-        </div>
-        <div class="col">
-          <span class="d-inline-block" id="popoverRemoverPleno" tabindex="0" data-bs-toggle="popover" data-bs-trigger="hover focus" data-bs-content="Desbloqueia sendo um clicador pleno">
-            <button class="btn btn-light" type="button" onclick="mais5ClicksAuto()" id="btnMais5ClicksAuto" disabled>Comprar $<span id="valorAutoClick5">???</span></button>
-          </span>
-          <p>Qtd. Comprado = <span id="countCompradoAutoClick5">0</span></p>
-        </div>
-      </div>
-  </div>
 
     <div class="container text-center containerMelhorias">
       <h3 id="tituloMelhoriasUnicas">Devem Ajudar Você</h3>
       <div class="row align-items-center">
         <div class="col">
           <p>50% de desconto no valor das melhorias de clique</p>
-          <button onclick="desconto50()" class="btn btn-light"><span id="cromprou50Desconto">Comprar $75000</span></button>
+          <button onclick="desconto50()" class="btn"><span id="cromprou50Desconto">Comprar $75000</span></button>
         </div>
         <div class="col">
           <p>Dobra sua quantidade de cliques por clique</p>
-          <button onclick="dobraQtdClicks()" class="btn btn-light"> <span id="cromprouDobraQtdClicks">Comprar $200000</span></button>
+          <button onclick="dobraQtdClicks()" class="btn"> <span id="cromprouDobraQtdClicks">Comprar $200000</span></button>
         </div>
         <div class="col">
           <p>Dobra a quantia de cliques das melhorias de clique</p>
-          <button onclick="dobraQtdClicksMelhoriaClicks()" class="btn btn-light"> <span id="comprouDobraQtdClicksMelhoriaClicks">Comprar $500000</span></button>
+          <button onclick="dobraQtdClicksMelhoriaClicks()" class="btn"> <span id="comprouDobraQtdClicksMelhoriaClicks">Comprar $500000</span></button>
         </div>
       </div>
   </div>
@@ -128,7 +106,7 @@
   <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
     <div class="offcanvas-header">
       <h4 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Suas Conquistas:</h4>
-      <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+      <button type="button" class="btn-close btn" data-bs-dismiss="offcanvas" aria-label="Close"></button>
     </div>
     <div class="offcanvas-body">
       <h5>Clicador Aprendiz</h5>

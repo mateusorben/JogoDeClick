@@ -9,9 +9,14 @@ if (button) {
   });
 }
 
-let scoreCount = 0;
+let scoreCount = 0; 
+
 let addCountScore = 1;
-let conquistaContadorClicks = 0;
+
+const btnConquistas = document.querySelector(".btn-conquistas");
+btnConquistas.addEventListener('click', function() {
+    validarConquistasClisk(conquistaContadorClicks);
+});
 
 function buttonSomar() {
     if(dobrouQtdClicks) { 
@@ -20,16 +25,10 @@ function buttonSomar() {
         dobrouQtdClicks = false;
         scoreCounPrincipal.innerHTML = scoreCount;
         conquistaContadorClicks++;
-        validarConquistasClisk();
-        console.log("score = " + scoreCount);
-        console.log("cada clique vale = " + addCountScore);
     } else {
         scoreCount += addCountScore;
         scoreCounPrincipal.innerHTML = scoreCount;
         conquistaContadorClicks++;
-        validarConquistasClisk();
-        console.log("score = " + scoreCount);
-        console.log("cada clique vale = " + addCountScore);
     }
 };
 
@@ -37,7 +36,6 @@ const scoreCounPrincipal = document.getElementById("scoreCount");
 const CountPorClick = document.getElementById("cadaClick");
 
 let valorControlador1Click = 10;
-let valorControlador1Click50Desconto = 0;
 
 const valor1Click = document.getElementById("valor1Click");
 const countComprado1Click = document.getElementById("countComprado1Click");
@@ -49,12 +47,13 @@ function mais1Click() {
     if(dobrouQtdClicksMelhoriaClicks){
         valorAdicionado1Clicks = 2;
     } 
+
     if(comprou50DescontoBool) {
         valorControlador1Click50Desconto = Math.floor(valorControlador1Click / 2);
         if(scoreCount >= valorControlador1Click50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
             scoreCount -= valorControlador1Click50Desconto;
-            let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
+            arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;
             comprou50DescontoBool = false;
@@ -63,38 +62,34 @@ function mais1Click() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
-        } else {
-            alert("Ainda não há cliques suficientes!");
-        }
-        
+            localStorage.setItem('valor1ClickDesconto', arredondandoValor);
+        } 
     } else if(mais1ClickApos50Desconto) {
         if(scoreCount >= valorControlador1Click50Desconto) {
             console.log("entrei no apos50")
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
             scoreCount -= valorControlador1Click50Desconto;
-            let arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
+            arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;          
             addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor1ClickDesconto', arredondandoValor);
         }
     } else {
         if(scoreCount >= valorControlador1Click) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click;
             scoreCount -= valorControlador1Click;
-            let arredondandoValor = Math.floor(valorControlador1Click * 1.2);
+            arredondandoValor = Math.floor(valorControlador1Click * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click = arredondandoValor;
             addCountScore += valorAdicionado1Clicks; 
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado1Click++;
             countComprado1Click.innerHTML = contadorCountComprado1Click;
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor1Click', arredondandoValor);
         }
     } 
 }
@@ -126,8 +121,7 @@ function mais5Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado5Clicks++;
             countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;
-        }  else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor5Clicks', arredondandoValor);
         }
     } else if (mais5ClicksApos50Desconto) {
         if (scoreCount >= valorControlador5Clicks50Desconto) {
@@ -140,8 +134,7 @@ function mais5Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado5Clicks++;
             countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor5Clicks', arredondandoValor);
         }
     } else {
         if(scoreCount >= valorControlador5Clicks) {
@@ -153,9 +146,8 @@ function mais5Clicks() {
             addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado5Clicks++;
-            countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;    
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            countComprado5Clicks.innerHTML = contadorCountComprado5Clicks;  
+            localStorage.setItem('valor5Clicks', arredondandoValor);  
         }
     }
 }
@@ -187,8 +179,7 @@ function mais3Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
             countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;
-        }  else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor3Clicks', arredondandoValor);
         }
     } else if (mais3ClicksApos50Desconto) {
         if (scoreCount >= valorControlador3Clicks50Desconto) {
@@ -201,8 +192,7 @@ function mais3Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
             countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor3Clicks', arredondandoValor);
         }
     } else {
         if(scoreCount >= valorControlador3Clicks) {
@@ -214,9 +204,8 @@ function mais3Clicks() {
             addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado3Clicks++;
-            countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;    
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            countComprado3Clicks.innerHTML = contadorCountComprado3Clicks;  
+            localStorage.setItem('valor3Clicks', arredondandoValor);  
         }
     }
 }
@@ -248,8 +237,7 @@ function mais20Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado20Clicks++;
             countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;
-        }  else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor20Clicks', arredondandoValor);
         }
     } else if (mais20ClicksApos50Desconto) {
         if (scoreCount >= valorControlador20Clicks50Desconto) {
@@ -262,8 +250,7 @@ function mais20Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado20Clicks++;
             countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor20Clicks', arredondandoValor);
         }
     } else {
         if(scoreCount >= valorControlador20Clicks) {
@@ -276,8 +263,7 @@ function mais20Clicks() {
             CountPorClick.innerHTML = addCountScore;
             contadorCountComprado20Clicks++;
             countComprado20Clicks.innerHTML = contadorCountComprado20Clicks;    
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor20Clicks', arredondandoValor);
         }
     }
 }
@@ -289,10 +275,10 @@ let contadorCountCompradoAutoClick = 0;
 let valorControladorAutoClick50Desconto = 0;
 let autoClickApos50Desconto = false;
 
-function mais1ClickAuto() {
-    let valorAdicionadoClicks = 1;
+function mais3ClickAuto() {
+    let valorAdicionadoClicks = 3;
     if (dobrouQtdClicksMelhoriaClicks){
-        valorAdicionadoClicks = 2;
+        valorAdicionadoClicks = 6;
     }
 
     if(comprou50DescontoBool) {
@@ -310,9 +296,8 @@ function mais1ClickAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000);
-        }  else {
-            alert("Ainda não há cliques suficientes!");
-        }
+            localStorage.setItem('valor3ClicksAuto', arredondandoValor);
+        } 
     } else if (autoClickApos50Desconto) {
         if (scoreCount >= valorControladorAutoClick50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto;
@@ -325,9 +310,8 @@ function mais1ClickAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000);
-        } else {
-            alert("Ainda não há cliques suficientes!");
-        }
+            localStorage.setItem('valor3ClicksAuto', arredondandoValor);
+        } 
     } else {
         if(scoreCount >= valorControladorAutoClick) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick;
@@ -340,8 +324,7 @@ function mais1ClickAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000); 
-        } else {
-            alert("Ainda não há cliques suficientes!")
+            localStorage.setItem('valor3ClicksAuto', arredondandoValor);
         }
     }
 }
@@ -374,8 +357,7 @@ function mais5ClicksAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000);
-        }  else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     } else if (autoClicks5Apos50Desconto) {
         if (scoreCount >= valorControladorAutoClick50Desconto5) {
@@ -389,8 +371,7 @@ function mais5ClicksAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000);
-        } else {
-            alert("Ainda não há cliques suficientes!");
+            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     } else {
         if(scoreCount >= valorControladorAutoClick5) {
@@ -404,8 +385,7 @@ function mais5ClicksAuto() {
             setInterval(function() {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;  
             }, 1000); 
-        } else {
-            alert("Ainda não há cliques suficientes!")
+            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     }
 }
@@ -492,7 +472,7 @@ function dobraQtdClicksMelhoriaClicks() {
             dobrouQtdClicksMelhoriaClicksBlock = true;
             dobrouQtdClicksMelhoriaNumero1.innerHTML = "2";
             dobrouQtdClicksMelhoriaNumero3.innerHTML = "6";
-            dobrouQtdClicksMelhoriaNumeroAuto.innerHTML = "2";
+            dobrouQtdClicksMelhoriaNumeroAuto.innerHTML = "6";
             
             if(desbloqueou5clicks){
                 dobrouQtdClicksMelhoriaNumero5.innerHTML = "10";
@@ -512,132 +492,3 @@ function dobraQtdClicksMelhoriaClicks() {
         alert("Você já comprou esse item!");
     }
 }
-
-//CONQUISTAS VALIDACOES
-
-const conquista10 = document.getElementById("conquista10");
-const conquistaMil = document.getElementById("conquistaMil");
-const conquista5Mil = document.getElementById("conquista5Mil");
-const conquista10Mil = document.getElementById("conquista10Mil");
-const conquista50Mil = document.getElementById("conquista50Mil");
-const conquista100Mil = document.getElementById("conquista100Mil");
-const conquista500Mil = document.getElementById("conquista500Mil");
-const toastLiveExample = document.getElementById('liveToast')
-const toast_body = document.getElementById('toast-body');
-
-const btnMais5Clicks = document.getElementById('btnMais5Clicks');
-const popoverRemoverAprendiz = document.getElementById('popoverRemoverAprendiz');
-const dobrouQtdClicksMelhoriaNumero5Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumero5');
-const valor5ClicksDesbloquear = document.getElementById('valor5Clicks');
-
-const btnMais20Clicks = document.getElementById('btnMais20Clicks');
-const popoverRemoverJunior = document.getElementById('popoverRemoverJunior');
-const dobrouQtdClicksMelhoriaNumero20Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumero20');
-const valor20ClicksDesbloquear = document.getElementById('valor20Clicks');
-
-const btnMais5ClicksAuto = document.getElementById('btnMais5ClicksAuto');
-const popoverRemoverPleno = document.getElementById('popoverRemoverPleno');
-const dobrouQtdClicksMelhoriaNumeroAuto5Desbloquear = document.getElementById('dobrouQtdClicksMelhoriaNumeroAuto5');
-const valor5ClicksAutoDesbloquear = document.getElementById('valorAutoClick5');
-
-const nivel_jogador_navbar = document.getElementById('nivel-jogador-navbar');
-
-function validarConquistasClisk() {
-    if(conquistaContadorClicks <= 10) {
-        conquista10.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 10) {     
-            toast_body.innerText = "Clicador Aprendiz | 10 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Clicador Aprendiz';
-            btnMais5Clicks.removeAttribute('disabled');
-            popoverRemoverAprendiz.style.display = 'none';
-            dobrouQtdClicksMelhoriaNumero5Desbloquear.innerHTML = '5';
-            valor5ClicksDesbloquear.innerHTML = '200';
-            desbloqueou5clicks = true;
-        } 
-    } 
-    if(conquistaContadorClicks <= 1000){
-        conquistaMil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 1000) {     
-            toast_body.innerText = "Clicador Junior | 1000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Clicador Junior';
-            btnMais20Clicks.removeAttribute('disabled');
-            popoverRemoverJunior.style.display = 'none';
-            dobrouQtdClicksMelhoriaNumero20Desbloquear.innerHTML = '20';
-            valor20ClicksDesbloquear.innerHTML = '2000';
-            desbloqueou20clicks = true;
-        } 
-    }
-    if(conquistaContadorClicks <= 5000){
-        conquista5Mil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 5000) {     
-            toast_body.innerText = "Clicador Pleno | 5000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Clicador Pleno';
-            btnMais5ClicksAuto.removeAttribute('disabled');
-            popoverRemoverPleno.style.display = 'none';
-            dobrouQtdClicksMelhoriaNumeroAuto5Desbloquear.innerHTML = '5';
-            valor5ClicksAutoDesbloquear.innerHTML = '5000';
-            desbloqueou5clicksAuto = true;
-        } 
-    }
-    if(conquistaContadorClicks <= 10000){
-        conquista10Mil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 10000) {     
-            toast_body.innerText = "Clicador Senior | 10000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Clicador Senior';
-        } 
-    }
-    if(conquistaContadorClicks <= 50000){
-        conquista50Mil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 50000) {     
-            toast_body.innerText = "Mega Clicador | 50000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Mega Clicadorz';
-        } 
-    }
-    if(conquistaContadorClicks <= 100000){
-        conquista100Mil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 100000) {     
-            toast_body.innerText = "Ultra Master Clicador | 100000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Ultra Master Clicador';
-        } 
-    }
-    if(conquistaContadorClicks <= 500000){
-        conquista500Mil.innerHTML = conquistaContadorClicks;
-        if (conquistaContadorClicks == 500000) {     
-            toast_body.innerText = "Você Realmente é um Clicador | 500000 Cliques";         
-            const toast = new bootstrap.Toast(toastLiveExample);
-            toast.show();
-            nivel_jogador_navbar.innerText = 'Você Realmente é um Clicador';
-        } 
-    }
-    
-}
-
-
-const popoverTriggerList = document.querySelectorAll('[data-bs-toggle="popover"]')
-const popoverList = [...popoverTriggerList].map(popoverTriggerEl => new bootstrap.Popover(popoverTriggerEl))
-
-function adjustFooterPosition() {
-    const body = document.querySelector('body');
-    const footer = document.querySelector('footer');
-    const bodyHeight = body.offsetHeight;
-    const windowHeight = window.innerHeight;
-    if (bodyHeight < windowHeight) {
-       footer.style.position = 'fixed';
-       footer.style.bottom = '0';
-    } else {
-       footer.style.position = 'static';
-    }
- }
- window.addEventListener('resize', adjustFooterPosition);
