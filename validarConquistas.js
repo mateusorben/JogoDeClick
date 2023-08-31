@@ -39,15 +39,8 @@ function validarConquistasClisk(conquistaContadorClicks) {
             valor5ClicksDesbloquear.innerHTML = '200';
             desbloqueou5clicks = true;
         } 
-    } else {
-        conquista10.innerHTML = "10";
-        nivel_jogador_navbar.innerText = 'Clicador Aprendiz';
-        btnMais5Clicks.removeAttribute('disabled');
-        popoverRemoverAprendiz.style.display = 'none';
-        dobrouQtdClicksMelhoriaNumero5Desbloquear.innerHTML = '5';
-        valor5ClicksDesbloquear.innerHTML = '200';
-        desbloqueou5clicks = true; 
     }
+    
     if(conquistaContadorClicks <= 1000){
         conquistaMil.innerHTML = conquistaContadorClicks;
         if (conquistaContadorClicks == 1000) {     
@@ -61,14 +54,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             valor20ClicksDesbloquear.innerHTML = '2000';
             desbloqueou20clicks = true;
         } 
-    } else {
-        conquistaMil.innerHTML = "1000";
-        nivel_jogador_navbar.innerText = 'Clicador Junior';
-        btnMais20Clicks.removeAttribute('disabled');
-        popoverRemoverJunior.style.display = 'none';
-        dobrouQtdClicksMelhoriaNumero20Desbloquear.innerHTML = '20';
-        valor20ClicksDesbloquear.innerHTML = '2000';
-        desbloqueou20clicks = true; 
     }
 
     if(conquistaContadorClicks <= 5000){
@@ -84,14 +69,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             valor5ClicksAutoDesbloquear.innerHTML = '5000';
             desbloqueou5clicksAuto = true;
         } 
-    } else {
-        conquista5Mil.innerHTML = "5000";
-        nivel_jogador_navbar.innerText = 'Clicador Pleno';
-        btnMais5ClicksAuto.removeAttribute('disabled');
-        popoverRemoverPleno.style.display = 'none';
-        dobrouQtdClicksMelhoriaNumeroAuto5Desbloquear.innerHTML = '5';
-        valor5ClicksAutoDesbloquear.innerHTML = '5000';
-        desbloqueou5clicksAuto = true; 
     }
 
     if(conquistaContadorClicks <= 10000){
@@ -102,9 +79,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             toast.show();
             nivel_jogador_navbar.innerText = 'Clicador Senior';
         } 
-    } else {
-        conquista10Mil.innerHTML = "10000";
-        nivel_jogador_navbar.innerText = 'Clicador Senior';
     }
 
     if(conquistaContadorClicks <= 50000){
@@ -115,9 +89,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             toast.show();
             nivel_jogador_navbar.innerText = 'Mega Clicador';
         } 
-    } else {
-        conquista50Mil.innerHTML = "50000";
-        nivel_jogador_navbar.innerText = 'Mega Clicadorz';
     }
 
     if(conquistaContadorClicks <= 100000){
@@ -128,9 +99,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             toast.show();
             nivel_jogador_navbar.innerText = 'Ultra Master Clicador';
         } 
-    } else {
-        conquista100Mil.innerHTML = "100000";
-        nivel_jogador_navbar.innerText = 'Ultra Master Clicador';
     }
 
     if(conquistaContadorClicks <= 500000){
@@ -141,8 +109,6 @@ function validarConquistasClisk(conquistaContadorClicks) {
             toast.show();
             nivel_jogador_navbar.innerText = 'Você Realmente é um Clicador';
         } 
-    } else {
-        conquista500Mil.innerHTML = "500000";
-        nivel_jogador_navbar.innerText = 'Você Realmente é um Clicador';
     }
+
 }
