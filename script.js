@@ -1,4 +1,10 @@
 const button = document.getElementById("myButton");
+let comprou50DescontoBool1click;
+let comprou50DescontoBool5Clicks;
+let comprou50DescontoBool3Clicks;
+let comprou50DescontoBool20Clicks;
+let comprou50DescontoBool3ClickAuto;
+let comprou50DescontoBool5ClicksAuto;
 
 if (button) {
     button.addEventListener("click", function () {
@@ -48,7 +54,7 @@ function mais1Click() {
         valorAdicionado1Clicks = 2;
     }
 
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool1click) {
         valorControlador1Click50Desconto = Math.floor(valorControlador1Click / 2);
         if (scoreCount >= valorControlador1Click50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador1Click50Desconto;
@@ -56,7 +62,7 @@ function mais1Click() {
             arredondandoValor = Math.floor(valorControlador1Click50Desconto * 1.2);
             valor1Click.innerHTML = arredondandoValor;
             valorControlador1Click50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool1click = false;
             mais1ClickApos50Desconto = true;
             addCountScore += valorAdicionado1Clicks;
             CountPorClick.innerHTML = addCountScore;
@@ -103,7 +109,7 @@ function mais5Clicks() {
     if (dobrouQtdClicksMelhoriaClicks) {
         valorAdicionadoClicks = 10;
     }
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool5Clicks) {
         valorControlador5Clicks50Desconto = Math.floor(valorControlador5Clicks / 2);
         if (scoreCount >= valorControlador5Clicks50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador5Clicks50Desconto;
@@ -111,7 +117,7 @@ function mais5Clicks() {
             let arredondandoValor = Math.floor(valorControlador5Clicks50Desconto * 1.2);
             valor5Clicks.innerHTML = arredondandoValor;
             valorControlador5Clicks50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool5Clicks = false;
             mais5ClicksApos50Desconto = true;
             addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
@@ -158,7 +164,7 @@ function mais3Clicks() {
     if (dobrouQtdClicksMelhoriaClicks) {
         valorAdicionadoClicks = 6;
     }
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool3Clicks) {
         valorControlador3Clicks50Desconto = Math.floor(valorControlador3Clicks / 2);
         if (scoreCount >= valorControlador3Clicks50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador3Clicks50Desconto;
@@ -166,7 +172,7 @@ function mais3Clicks() {
             let arredondandoValor = Math.floor(valorControlador3Clicks50Desconto * 1.2);
             valor3Clicks.innerHTML = arredondandoValor;
             valorControlador3Clicks50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool3Clicks = false;
             mais3ClicksApos50Desconto = true;
             addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
@@ -213,7 +219,7 @@ function mais20Clicks() {
     if (dobrouQtdClicksMelhoriaClicks) {
         valorAdicionadoClicks = 40;
     }
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool20Clicks) {
         valorControlador20Clicks50Desconto = Math.floor(valorControlador20Clicks / 2);
         if (scoreCount >= valorControlador20Clicks50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControlador20Clicks50Desconto;
@@ -221,7 +227,7 @@ function mais20Clicks() {
             let arredondandoValor = Math.floor(valorControlador20Clicks50Desconto * 1.2);
             valor20Clicks.innerHTML = arredondandoValor;
             valorControlador20Clicks50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool20Clicks = false;
             mais20ClicksApos50Desconto = true;
             addCountScore += valorAdicionadoClicks;
             CountPorClick.innerHTML = addCountScore;
@@ -268,7 +274,7 @@ function mais3ClickAuto() {
         valorAdicionadoClicks = 6;
     }
 
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool3ClickAuto) {
         valorControladorAutoClick50Desconto = Math.floor(valorControladorAutoClick / 2);
         if (scoreCount >= valorControladorAutoClick50Desconto) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto;
@@ -276,7 +282,7 @@ function mais3ClickAuto() {
             let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto * 1.2);
             valorAutoClick.innerHTML = arredondandoValor;
             valorControladorAutoClick50Desconto = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool3ClickAuto = false;
             autoClickApos50Desconto = true;
             contadorCountCompradoAutoClick++;
             countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
@@ -326,7 +332,7 @@ function mais5ClicksAuto() {
         valorAdicionadoClicks = 10;
     }
 
-    if (comprou50DescontoBool) {
+    if (comprou50DescontoBool5ClicksAuto) {
         valorControladorAutoClick50Desconto5 = Math.floor(valorControladorAutoClick5 / 2);
         if (scoreCount >= valorControladorAutoClick50Desconto5) {
             scoreCounPrincipal.innerHTML = scoreCount - valorControladorAutoClick50Desconto5;
@@ -334,14 +340,13 @@ function mais5ClicksAuto() {
             let arredondandoValor = Math.floor(valorControladorAutoClick50Desconto5 * 1.2);
             valorAutoClick5.innerHTML = arredondandoValor;
             valorControladorAutoClick50Desconto5 = arredondandoValor;
-            comprou50DescontoBool = false;
+            comprou50DescontoBool5ClicksAuto = false;
             autoClicks5Apos50Desconto = true;
             contadorCountCompradoAutoClick5++;
             countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
             setInterval(function () {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
             }, 1000);
-            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     } else if (autoClicks5Apos50Desconto) {
         if (scoreCount >= valorControladorAutoClick50Desconto5) {
@@ -355,7 +360,6 @@ function mais5ClicksAuto() {
             setInterval(function () {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
             }, 1000);
-            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     } else {
         if (scoreCount >= valorControladorAutoClick5) {
@@ -369,7 +373,6 @@ function mais5ClicksAuto() {
             setInterval(function () {
                 scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
             }, 1000);
-            localStorage.setItem('valor5ClicksAuto', arredondandoValor);
         }
     }
 }
@@ -386,7 +389,12 @@ function desconto50() {
     if (!comprou50DescontoBool) {
         if (scoreCount >= 75000) {
             comprou50Desconto.innerText = "Comprado!"
-            comprou50DescontoBool = true;
+            comprou50DescontoBool1click = true;
+            comprou50DescontoBool5Clicks = true;
+            comprou50DescontoBool3Clicks = true;
+            comprou50DescontoBool20Clicks = true;
+            comprou50DescontoBool3ClickAuto = true;
+            comprou50DescontoBool5ClicksAuto = true;
             valor1Click.innerHTML = Math.floor(valorControlador1Click / 2);
             valor3Clicks.innerHTML = Math.floor(valorControlador3Clicks / 2);
             valorAutoClick.innerHTML = Math.floor(valorControladorAutoClick / 2);

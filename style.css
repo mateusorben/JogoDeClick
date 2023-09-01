@@ -1,16 +1,20 @@
 body {
-  background-color: rgb(11, 1, 22);
+  background-color: rgb(24, 19, 31);
   padding: 0px;
   margin: 0px;
   position: relative;
   color: aliceblue;
-  font-size: large;
 }
 
 .btn {
+  font-weight: bold;
   background-color: aquamarine;
   border-color: aquamarine;
-  box-shadow: 0px 0px 10px rgba(127, 255, 212, 0.300);
+}
+
+.alinhamento-lateral {
+  display: flex;
+  align-items: center;
 }
 
 /* NAVBAR */
@@ -51,8 +55,12 @@ nav p{
 
 /* SCORE */
 
+.botao-click {
+  height: 180px;
+}
+
 #scoreCount{
-  font-size: 18px;
+  font-size: 25px;
 }
 
 .containerScore p{
