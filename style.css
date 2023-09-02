@@ -141,6 +141,7 @@ footer {
 /* FIM FOOTER*/
 
 @media only screen and (max-width: 991px){
+ /*
   .btn-conquistas {
     margin-top: 20px;
   }
@@ -149,12 +150,14 @@ footer {
     margin-top: 20px;
     width: 400px;
   }
-
+  */
+  
   .containerValores .col{
     margin: 10px;
     border: 1px solid rgba(0, 0, 0, 0);
     width: 300px;
   }
+
 }
 
 /* Estilizando a barra de rolagem */
