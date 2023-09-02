@@ -266,7 +266,8 @@ const countCompradoAutoClick = document.getElementById("countCompradoAutoClick")
 let valorControladorAutoClick = 100;
 let contadorCountCompradoAutoClick = 0;
 let valorControladorAutoClick50Desconto = 0;
-let autoClickApos50Desconto = false;
+let autoClickApos50Desconto;
+let jaIniciouFuncao3ClickAuto;
 
 function mais3ClickAuto() {
     let valorAdicionadoClicks = 3;
@@ -286,9 +287,6 @@ function mais3ClickAuto() {
             autoClickApos50Desconto = true;
             contadorCountCompradoAutoClick++;
             countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
         }
     } else if (autoClickApos50Desconto) {
         if (scoreCount >= valorControladorAutoClick50Desconto) {
@@ -299,9 +297,6 @@ function mais3ClickAuto() {
             valorControladorAutoClick50Desconto = arredondandoValor;
             contadorCountCompradoAutoClick++;
             countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
         }
     } else {
         if (scoreCount >= valorControladorAutoClick) {
@@ -312,10 +307,13 @@ function mais3ClickAuto() {
             valorControladorAutoClick = arredondandoValor;
             contadorCountCompradoAutoClick++;
             countCompradoAutoClick.innerHTML = contadorCountCompradoAutoClick;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
         }
+    }
+    if (!jaIniciouFuncao3ClickAuto) {
+        setInterval(function () {
+            scoreCounPrincipal.innerHTML = scoreCount += (valorAdicionadoClicks * contadorCountCompradoAutoClick);
+        }, 1000);
+        jaIniciouFuncao3ClickAuto = true;
     }
 }
 
@@ -324,7 +322,8 @@ const countCompradoAutoClick5 = document.getElementById("countCompradoAutoClick5
 let valorControladorAutoClick5 = 5000;
 let contadorCountCompradoAutoClick5 = 0;
 let valorControladorAutoClick50Desconto5 = 0;
-let autoClicks5Apos50Desconto = false;
+let autoClicks5Apos50Desconto;
+let jaIniciouFuncao5ClickAuto;
 
 function mais5ClicksAuto() {
     let valorAdicionadoClicks = 5;
@@ -343,10 +342,7 @@ function mais5ClicksAuto() {
             comprou50DescontoBool5ClicksAuto = false;
             autoClicks5Apos50Desconto = true;
             contadorCountCompradoAutoClick5++;
-            countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
+            countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5; 
         }
     } else if (autoClicks5Apos50Desconto) {
         if (scoreCount >= valorControladorAutoClick50Desconto5) {
@@ -357,9 +353,6 @@ function mais5ClicksAuto() {
             valorControladorAutoClick50Desconto5 = arredondandoValor;
             contadorCountCompradoAutoClick5++;
             countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
         }
     } else {
         if (scoreCount >= valorControladorAutoClick5) {
@@ -370,10 +363,13 @@ function mais5ClicksAuto() {
             valorControladorAutoClick5 = arredondandoValor;
             contadorCountCompradoAutoClick5++;
             countCompradoAutoClick5.innerHTML = contadorCountCompradoAutoClick5;
-            setInterval(function () {
-                scoreCounPrincipal.innerHTML = scoreCount += valorAdicionadoClicks;
-            }, 1000);
         }
+    }
+    if (!jaIniciouFuncao5ClickAuto) {
+        setInterval(function () {
+            scoreCounPrincipal.innerHTML = scoreCount += (valorAdicionadoClicks * contadorCountCompradoAutoClick5);
+        }, 1000);
+        jaIniciouFuncao5ClickAuto = true;
     }
 }
 
